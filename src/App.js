@@ -3,12 +3,12 @@ import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import uuid from "uuid/v4";
 
 const itemsFromAPI = [
-  { id: uuid(), content: "Make Drag and drop for monday" },
-  { id: uuid(), content: "Dashboard" },
-  { id: uuid(), content: "New feature" },
+  { id: uuid(), content: "Fazer Drag and drop para monday" },
+  { id: uuid(), content: "Criar Dashboard" },
+  { id: uuid(), content: "Nova feature" },
   { id: uuid(), content: "Bug fix" },
   { id: uuid(), content: "Email marketing" },
-  { id: uuid(), content: "Another feature" },
+  { id: uuid(), content: "Outra feature" },
   { id: uuid(), content: "Fix feature 15" },
 ];
 
@@ -32,7 +32,7 @@ const columnsFromAPI = {
 };
 
 const onDragEnd = (result, columns, setColumns) => {
-  if (!result.destination) return; //check se onde foi solto é diferente do atual
+  if (!result.destination) return;
 
   const { source, destination } = result;
 
@@ -79,12 +79,13 @@ const onDragEnd = (result, columns, setColumns) => {
     }
     setColumns(newColumns);
 
-    // console.log(newColumns);
+    console.log(newColumns);
   }
 };
 
 function App() {
   const [columns, setColumns] = useState(columnsFromAPI);
+
   return (
     <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
       <DragDropContext
